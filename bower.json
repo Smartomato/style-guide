@@ -1,0 +1,21 @@
+{
+  "name": "brunch-for-static",
+  "version": "0.0.0",
+  "authors": [
+    "molefrog <molefrog@gmail.com>",
+    "flywithme <boris@adimov.ru>"
+  ],
+  "description": "Brunch skeleton for fast prototyping static pages",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
+}
