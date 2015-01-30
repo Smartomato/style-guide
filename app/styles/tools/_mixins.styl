@@ -1,0 +1,44 @@
+@import '_colors'
+
+// Миксины
+buttonize($active=false ,$background=#fff, $color=#000, $padding_top_bottom = 6px, $padding_left_right = 9px)
+  border-radius 8px
+  border none
+  text-decoration none
+  background-color $background
+  color $color
+  box-sizing border-box
+  padding $padding_top_bottom $padding_left_right
+  if $active==true
+    &:hover
+      background-color blend(rgba(#000, 0.07) $background)
+    &.active
+      background-color blend(rgba(#000, 0.1) $background)
+      &:hover
+        background-color blend(rgba(#000, 0.1) $background)
+  a &
+    text-decoration none
+
+
+
+smallscreen($break = 1199px)
+  @media only screen and (max-width: $break)
+    {block}
+
+midscreen($break = 1200px, $max = 1400px)
+  @media only screen and (min-width: $break) and (max-width: $max)
+    {block}
+
+bigscreen($break = 1400px)
+  @media only screen and (min-width: $break)
+    {block}
+
+inputize()
+  background white
+  border 1px solid transparent
+  color $identity
+  border-radius 8px
+
+  &:focus
+    outline none
+    border 1px solid $identity

@@ -1,0 +1,89 @@
+@import 'nib'
+@import '../tools/_colors'
+@import '../tools/_mixins'
+@import '../tools/_variables'
+
+
+//new list
+.link-list
+  a
+    &, &:active, &:visited
+      display block
+      padding 15px 20px
+      color $black
+      border-top 1px solid $dgrey
+      box-sizing border-box
+      &:first-child
+        border-top none
+      &:last-child
+        border-bottom 1px solid $dgrey
+      img
+        height 50px
+        display inline-block
+        vertical-align middle
+        margin-right 20px
+        border-radius 500px
+        &~p, &~.name
+          max-width 190px
+          text-overflow ellipsis
+      >div
+        display inline-block
+        vertical-align middle
+        p
+          position relative
+          padding 2px 0
+
+            // background #f00
+
+        //TODO: вынести это из кита, наверно
+        .phone
+          color $ddgrey
+    &.selected
+      background-color $identity
+      color $white
+      font-weight 700
+      border-color $identity
+      img
+        background #fff
+      >div p.phone
+        color $white
+        font-weight 400
+    &.selected+a
+      border-top-color rgba(0,0,0,0)
+
+// ul + .create_element,
+.link-list + .create_element
+  display block
+  padding 15px 20px
+  color $black
+  text-decoration none
+  color $ddgrey
+  cursor pointer
+  .plus
+    height 31px
+    width 31px
+    border-radius 500px
+    display inline-block
+    vertical-align middle
+    margin 0 30px 3px 9px
+    background $dgrey
+    position relative
+    &:before, &:after
+      display block
+      content ""
+      position absolute
+      background $white
+    &:before
+      width 1px
+      height 11px
+      top 10px
+      left 15px
+    &:after
+      width 11px
+      height 1px
+      top 15px
+      left 10px
+
+
+
+

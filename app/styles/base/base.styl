@@ -1,0 +1,32 @@
+@import 'nib'
+global-reset()
+
+
+html
+  font-weight normal
+  font-smoothing antialiased
+  font-family 'Proxima Nova'
+
+  &, & > body
+    height 100%
+
+  body
+    h1, h2, h3, h4, h5, h6
+      font-weight normal
+
+  // ---
+  // Ссылки по умолчанию
+  // ---
+  a
+    color $identity
+    text-decoration none
+
+  // ---
+  // Антиалиасинг
+  // ---
+  button,
+  input[type=text]
+    font-smoothing antialiased
+    font-family 'Proxima Nova'
+
+

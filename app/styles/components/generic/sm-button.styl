@@ -1,0 +1,145 @@
+@import 'nib'
+@import '../../tools/_colors'
+
+@keyframes spin
+  0%
+    transform rotate(0deg)
+  100%
+    transform rotate(359deg)
+
+// ---
+// Кнопка с тенью
+// ---
+.sm-button
+  font-weight 700
+  border none
+  border-radius 8px
+  text-decoration none
+  box-sizing border-box
+  outline none
+  position relative
+  transition background-color 0.4s
+  cursor pointer
+
+  // ---
+  // Типы
+  // ---
+  &, &.default
+    background $identity
+    border none
+    color #FFF
+
+    &:hover, &:active
+      background-color darken($identity, 5)
+
+    &:not([disabled]):active
+      box-shadow 0 1px 0px rgba(0,0,0,0.2)
+      transform translateY(1px)
+
+  &.primary
+    background $primary
+    color white
+    border none
+
+    &:hover, &:active
+      background-color darken($primary, 5)
+
+    &:not([disabled]):active
+      box-shadow 0 1px 0px rgba(0,0,0,0.2)
+      transform translateY(1px)
+
+  &.gray
+    background rgba(0,0,0,0)
+    border none
+    color $textGray
+
+    &:hover, &:active
+      background-color rgba(0,0,0,0.05)
+
+    &:not([disabled]):active
+      box-shadow 0 1px 0px rgba(0,0,0,0.05)
+      transform translateY(1px)
+
+  &.bordered-gray
+    background rgba(0,0,0,0)
+    border 2px solid $textGray
+    color $textGray
+    transition background-color 0.2s
+
+    &:hover, &:active
+      color white
+      background-color $textGray
+
+    &:not([disabled]):active
+      box-shadow 0 1px 0px rgba(0,0,0,0.2)
+      transform translateY(1px)
+
+  // ---
+  // Загрузка
+  // ---
+  &.is-loading,
+  &.is-loading:hover,
+  &.is-loading.success,
+  &.is-loading.success:hover
+    background-color #B9B9B9
+
+    .sm-button-label
+      opacity 0
+      transform scale(1.5)
+
+    .sm-button-spinner
+      color white
+      opacity 1
+      transform scale(1)
+
+  .sm-button-label
+    opacity 1
+    transform scale(1)
+    transition transform 0.4s, opacity 0.4s
+
+  .sm-button-spinner
+    display block
+    position absolute
+    left 50%
+    top 50%
+    margin-top -16px
+    margin-left -14px
+    color textGray
+    opacity 0
+    transform scale(1.5)
+    transition transform 0.4s, opacity 0.4s
+
+    &:before
+      content '\f29d'
+      font-family 'Ionicons'
+      font-size 28px
+      font-smoothing antialiased
+      animation spin 1.2s infinite linear
+
+  // ---
+  // Размер кнопки
+  // ---
+  &.small
+    font-size 12px
+    padding 2px 8px 2px 8px
+
+  &, &.medium
+    font-size 14px
+    padding 7px 12px 7px 12px
+
+  &.large
+    font-size 15px
+    padding 9px 18px 9px 18px
+
+  &.xlarge
+    font-size 18px
+    padding 10px 20px 10px 20px
+
+  &.full-width
+    width 100%
+
+
+
+
+
+

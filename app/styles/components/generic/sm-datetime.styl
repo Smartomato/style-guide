@@ -1,0 +1,63 @@
+@import 'nib'
+@import '../../tools/_colors'
+
+.sm-datetime
+  border-radius 8px
+  padding 7px 10px
+  color $textBlack
+  border 2px solid $dgrey
+  background none
+  font-family 'Proxima Nova'
+  font-size 14px
+  position relative
+  display block
+  width 100%
+  box-sizing border-box
+
+  &:active,
+  &:focus
+    border 2px solid $identity
+    outline none
+
+    &:after
+      color $identity
+      border-color $identity
+
+  &::-webkit-outer-spin-button
+  &::-webkit-inner-spin-button
+    appearance none
+    display none
+
+  &::-webkit-clear-button
+    display block
+    position absolute
+    right 45px
+    top 50%
+    transform translateY(-50%)
+
+  &::-webkit-calendar-picker-indicator
+    display block
+    background red
+    position absolute
+    size 30px
+    right 0
+    top 0
+    opacity 0
+
+  &:after
+    content '\e2c1'
+    font-family 'Streamline'
+    display block
+    position absolute
+    font-size 18px
+    text-align center
+    line-height 34px
+    size 34px
+    right 0
+    top 0
+    color $textBlack
+    font-smoothing antialiased
+    border-left 1px solid $dgrey
+    pointer-events none
+    cursor pointer
+
