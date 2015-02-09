@@ -135,4 +135,88 @@ Component — введение данного набора сущностей н
 ```
 Все состояния чекбокса также определяются в этом файле. Код Generic компонента не нужно приводить, так как он может быть совершенно любым, главное изолировать его по классу корневого элемента.
 
-Modules — самая неоднозначная сущность. Более всего модули похожи на блоки в БЭМ. Модули определяют расположение контентных блоков внутри лэйаута. Модуль может быть вложен в другой модуль.
+Modules — самая неоднозначная сущность. Модули похожи на блоки в БЭМ, они определяют расположение контентных блоков внутри лэйаута. Модуль может быть вложен в другой модуль. Работа с этой частью верстки допускает отказ от принципов DRY, код описывающий модули может не использоваться повторно и чаще всего принадлежит контексту конкретного роута.
+Модули также реализуют изоляцию стилей по классу корневого элемента. В остальных случаях стили приложения не должны быть изолированы.
+
+
+![Screenshot1](https://raw.githubusercontent.com/Smartomato/style-guide/master/app/assets/images/scr1.png)
+Модальное окно — хороший пример модуля
+![Screenshot2](https://raw.githubusercontent.com/Smartomato/style-guide/master/app/assets/images/scr2.png)
+
+
+#### modules/curier.styl
+```sass
+.courier-item
+  min-height 75px
+  display block
+  color #757575
+  padding 10px
+  border 1px solid transparent
+  border-top 1px solid #e4e4e4
+
+  .avatar
+    border-radius 1000px
+    width 50px
+    height 50px
+    float left
+    margin-top 5px
+    background-color #fbfbfb
+
+  .name,
+  .organization,
+  .phone
+    margin-left 70px
+
+  .name
+    font-weight 400
+
+  .organization
+    font-size 12px
+
+
+  .avatar-wrapper
+    float left
+    width 118px
+    height 118px
+    border-radius 118px
+    margin-left 20px
+    overflow hidden
+
+    img.avatar
+      width 100%
+      height 100%
+      border-radius 118px
+
+  .contact-info
+    float left
+    margin-left 30px
+    width 390px
+    box-sizing initial
+
+  .credentials
+    margin-top 20px
+    float none
+    clear both
+    width 580px
+    padding-left 20px
+    clearfix()
+
+    h4
+      margin-top 20px
+
+    .sm-textfield
+      float left
+      width 260px
+      margin-right 20px
+  .sm-textarea
+    margin-left 20px
+    margin-top 20px
+    width 540px
+    float none
+
+    textarea
+      height 100px
+      resize vertical
+
+
+```
