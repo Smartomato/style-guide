@@ -1,0 +1,122 @@
+@import 'nib'
+@import '../tools/_colors'
+@import '../tools/_mixins'
+@import '../tools/_variables'
+
+
+// Блок элементов в сайдбаре
+.courier-item
+  min-height 75px
+  display block
+  color #757575
+  padding 10px
+  border 1px solid transparent
+  border-top 1px solid #e4e4e4
+
+  &:first-child
+    border-top 1px solid transparent
+
+  &.selected
+    // border-radius 5px
+    // border 1px solid #B4B4B4
+    background #f8f8f8
+    color #696969
+
+    & + .courier-item
+      border-top 1px solid transparent
+
+  &:hover
+    text-decoration none
+
+
+  .avatar
+    border-radius 1000px
+    width 50px
+    height 50px
+    float left
+    margin-top 5px
+    background-color #fbfbfb
+
+  .name,
+  .organization,
+  .phone
+    margin-left 70px
+
+  .name
+    font-weight 400
+
+  .organization
+    font-size 12px
+
+
+  .avatar-wrapper
+    float left
+    width 118px
+    height 118px
+    border-radius 118px
+    margin-left 20px
+    overflow hidden
+
+    img.avatar
+      width 100%
+      height 100%
+      border-radius 118px
+
+  .contact-info
+    float left
+    margin-left 30px
+    width 390px
+    box-sizing initial
+
+  .credentials
+    margin-top 20px
+    float none
+    clear both
+    width 580px
+    padding-left 20px
+    clearfix()
+
+    h4
+      margin-top 20px
+
+    .sm-textfield
+      float left
+      width 260px
+      margin-right 20px
+
+      & + .sm-textfield
+        margin-top 0
+
+      &:first-child
+        margin-left 0
+
+  .sm-textarea
+    margin-left 20px
+    margin-top 20px
+    width 540px
+    float none
+
+    textarea
+      height 100px
+      resize vertical
+
+  .button-block
+    margin-left 40px
+    margin-top 20px
+
+
+    .btn
+      margin-right 10px
+      color rgba(0,0,0,0.8)
+
+      $danger-color = #e60e00;
+      &:last-child
+        margin-right 0
+
+      &.btn-danger
+        margin-right 30px
+        background white
+        color $danger-color
+
+        &:hover
+          color darken($danger-color, 10)

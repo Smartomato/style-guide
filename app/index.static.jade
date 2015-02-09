@@ -14,5 +14,62 @@ head
 
 
 body
+  .header
+    a.brand(href="#")
+      img(src="images/logo.png")
+
+    ul.nav
+      li
+        a(href="#") Menu
+        a(href="#") Items
+        a(href="#") List
+
+  .main
+    .aside
+      -for(var i=0;i<5;i++)
+        .link-list
+          a(href="#")
+            img.avatar(src="images/person.png")
+            div
+              p Some Person
+              p.phone +7 (904) 505 99 50
+
+      a.create_element(href="#")
+        .plus
+        | Добавить курьера
+
+    .section
+      .item-info.courier-item
+        .avatar-wrapper
+          img.avatar(src="images/person.png")
+
+        .contact-info
+          .sm-textfield
+            input(value=name placeholder='Введите имя')
+            label Имя
+
+          .sm-textfield
+            input(value=phone placeholder='Введите номер телефона')
+            label Телефон
+
+        .credentials
+          .sm-textfield
+            input(value=login placeholder='Введите логин')
+            label Логин
+
+          .sm-textfield
+            input(value=password placeholder='Введите пароль')
+            label Пароль
+
+        .sm-textarea
+          textarea(value=comment placeholder='Комментарий')
+          label Комментарий
+
+        .button-block
+          button.btn.btn-danger(click='destroyCourier') Удалить
+          button.btn.btn-default(click='cancel') Отменить
+          button.btn.btn-default(click='saveCourier')
+            | Сохранить
+
 
 
